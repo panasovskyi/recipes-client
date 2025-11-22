@@ -1,5 +1,7 @@
+@use '../../styles/mixins' as *;
+
 .recipePage {
-  padding-block: 12px;
+  padding: 2rem 1rem;
 
   &__buttonBack {
     align-self: flex-start;
@@ -10,6 +12,7 @@
     border-radius: 6px;
     cursor: pointer;
     transition: background 0.2s ease;
+    margin-bottom: 24px;
 
     &:hover {
       background: #e0e0e0;
@@ -17,14 +20,13 @@
   }
 
   &__title {
-    font-size: 2rem;
-    font-weight: 600;
-    margin: 1rem 0;
-    color: #222;
+    @include heading(h2);
+
+    margin-bottom: 12px;
   }
 
   &__steps {
-    font-size: 1.2rem;
+    font-size: 16px;
     margin-top: 2rem;
     margin-bottom: 1rem;
     color: #444;

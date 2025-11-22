@@ -1,11 +1,11 @@
 import axios from "axios";
 import { Recipe } from '../types/recipe';
 
-const BASE_URL = "http://localhost:1111";
+const API_URL = "https://recipes-2gdy.onrender.com";
 
 const create = async (newRecipe: Recipe) => {
   const res = await axios.post(
-    "http://localhost:1111/recipes/create",
+    `${API_URL}/recipes/create`,
     newRecipe
   );
 
@@ -13,7 +13,7 @@ const create = async (newRecipe: Recipe) => {
 };
 
 const getAll = async () => {
-  const res = await axios.get("http://localhost:1111/recipes");
+  const res = await axios.get(API_URL + "/recipes");
 
   return res.data;
 }

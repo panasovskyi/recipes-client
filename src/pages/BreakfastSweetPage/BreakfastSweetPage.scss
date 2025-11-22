@@ -1,0 +1,9 @@
+@use '../../styles/mixins' as *;
+
+.breakfastSweetPage {
+  padding: 2rem 1rem;
+
+  &__title {
+    @include heading(h2);
+  }
+}

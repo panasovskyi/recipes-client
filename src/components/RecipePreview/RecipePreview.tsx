@@ -20,7 +20,7 @@ export const RecipePreview: React.FC<Props> = ({ recipe, endpoint }) => {
         <li className="recipePreview__item">Вуглеводи: {recipe.carbs}</li>
       </ul>
       <p className="recipePreview__text">
-        Основні інгредієнти: {ingredients.join(", ")}
+        <strong>Основні інгредієнти:</strong> {ingredients.join(", ")}
       </p>
       <Link to={`${endpoint}/${recipe.id}`} className="recipePreview__link">
         Відкрити рецепт

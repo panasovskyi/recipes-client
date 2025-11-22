@@ -6,10 +6,13 @@ type Props = {
 
 export const HowToCook: React.FC<Props> = ({ steps }) => {
   return (
-    <ol className='howToCook'>
-      {steps.map(step => (
-        <li key={step} className='howToCook__item'>{step}</li>
-      ))}
-    </ol>
+    <div className='howToCook'>
+      <h4 className='howToCook__title'>Як готувати:</h4>
+      <ol className='howToCook__list'>
+        {steps.map(step => (
+          <li key={step} className='howToCook__item'>{step}</li>
+        ))}
+      </ol>
+    </div>
   )
 }

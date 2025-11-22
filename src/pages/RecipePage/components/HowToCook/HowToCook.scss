@@ -1,8 +1,17 @@
+@use '../../../../styles/mixins' as *;
+
 .howToCook {
-  counter-reset: step-counter;
+
+ &__title {
+    @include heading(h4)
+  }
+
+  &__list {
+    counter-reset: step-counter;
   list-style: none;
   padding-left: 0;
   margin: 1rem 0;
+  }
 
   &__item {
     counter-increment: step-counter;

@@ -1,10 +1,16 @@
-import { Navigation } from './Navigation/Navigation';
+import { Navigation } from '../Navigation/Navigation';
 import './MobileMenu.scss';
+import { Dispatch, SetStateAction } from 'react';
 
-export const MobileMenu = () => {
+type Props = {
+  setIsMenuOpen?: Dispatch<SetStateAction<boolean>>;
+  isMenuOpen?: boolean;
+};
+
+export const MobileMenu: React.FC<Props> = ({ setIsMenuOpen, isMenuOpen }) => {
   return (
     <div className='mobileMenu'>
-      <Navigation modificator="mobile" />
+      <Navigation modificator="mobile" setIsMenuOpen={setIsMenuOpen} isMenuOpen={isMenuOpen} />
     </div>
   )
 }

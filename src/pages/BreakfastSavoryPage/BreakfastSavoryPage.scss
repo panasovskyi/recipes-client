@@ -1,0 +1,9 @@
+@use '../../styles/mixins' as *;
+
+.breakfastSavoryPage {
+  padding: 2rem 0;
+
+  &__title {
+    @include heading(h2);
+  }
+}

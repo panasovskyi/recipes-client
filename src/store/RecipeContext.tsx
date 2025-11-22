@@ -4,10 +4,14 @@ import { recipeService } from "../api/request";
 
 type ContextType = {
   recipes: Recipe[];
-}
+  isLoader: boolean;
+  errorMessage: string;
+};
 
 export const RecipeContext = createContext<ContextType>({
   recipes: [],
+  isLoader: false,
+  errorMessage: '',
 });
 
 type Props = {
@@ -16,13 +20,23 @@ type Props = {
 
 export const RecipeProvider: React.FC<Props> = ({ children }) => {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
+  const [isLoader, setIsLoader] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
-    recipeService.getAll().then(setRecipes);
+    setIsLoader(true);
+
+    recipeService
+      .getAll()
+      .then(setRecipes)
+      .catch(() => setErrorMessage("Unable to load recipes from server"))
+      .finally(() => setIsLoader(false));
   }, []);
 
   const value = {
-    recipes
+    recipes,
+    isLoader,
+errorMessage,
   };
 
   return (

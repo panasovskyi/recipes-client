@@ -1,0 +1,33 @@
+// variables.scss
+$font-family-heading: 'Inter', sans-serif;
+$color-heading: #222;
+$color-subheading: #555;
+$spacing-unit: 8px;
+
+// mixins.scss
+@mixin heading($level) {
+  @if $level == h2 {
+    font-size: 28px;
+    line-height: 1.3;
+    font-weight: 700;
+    color: $color-heading;
+//    margin-bottom: $spacing-unit * 2;
+  } @else if $level == h3 {
+    font-size: 24px;
+    line-height: 1.35;
+    font-weight: 600;
+    color: $color-heading;
+//    margin-bottom: $spacing-unit * 1.5;
+  } @else if $level == h4 {
+    font-size: 20px;
+    line-height: 1.4;
+    font-weight: 600;
+    color: $color-subheading;
+//    margin-bottom: $spacing-unit;
+  } @else {
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 500;
+//    color: $color-subheading;
+  }
+}
